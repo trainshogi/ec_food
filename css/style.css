@@ -1,8 +1,5 @@
 body{
 	max-width: 800px;
-	margin-left: auto;
-	margin-right: auto;
-	text-align: center;
 }
 #header{
 	width: 100%;
@@ -30,7 +27,6 @@ img{
 }
 h1, h2, h3{
 	font-weight: bold;
-	text-align: center;
 }
 li, p{
 	text-align: center;
