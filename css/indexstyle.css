@@ -1,5 +1,9 @@
+.keyword_input_text{
+	margin: 10px auto;
+}
 .keyword_input{
 	text-align: center;
+	margin: 10px auto;
 }
 .recipi_list{
 	max-width: 400px;
