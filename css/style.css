@@ -1,3 +1,13 @@
+#header{
+	display:  flex;
+	width: 100%;
+	align-items: center;
+	background-color: #BF0000;
+}
+#header h1{
+	margin: auto;
+	margin-left: calc(40% - 60px);
+}
 h1, h2, h3{
 	font-weight: bold;
 	text-align: center;
