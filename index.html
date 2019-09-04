@@ -3,18 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>【楽天市場】レシピで検索</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/indexstyle.css">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 <body>
     <h1>レシピで検索</h1>
     <p>検索したいキーワードを入力してください</p>
-    <input type="search" name="search" placeholder="キーワードを入力してください">
-    <input type="submit" name="submit" value="検索">
-	<ul>
-    	<li>肉じゃが</li>
-    	<li>カレー</li>
-    	<li>シチュー</li>
-    </ul>
+    <div class="keyword_input">
+    	<input type="search" name="search" placeholder="キーワードを入力してください">
+    	<input type="submit" name="submit" value="検索">
+	</div>
+	<div style="text-align: center;">
+		<div class="list-group recipi_list">
+			<a href="#" class="list-group-item list-group-item-action">肉じゃが</a>
+			<a href="#" class="list-group-item list-group-item-action">カレー</a>
+			<a href="#" class="list-group-item list-group-item-action">シチュー</a>
+		</div>
+	</div>
 </body>
 </html>
