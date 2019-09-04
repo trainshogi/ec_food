@@ -1,0 +1,15 @@
+h1{
+	font-weight: bold;
+	text-align: center;
+}
+li, p{
+	text-align: center;
+}
+.keyword_input{
+	text-align: center;
+}
+.recipi_list{
+	max-width: 400px;
+	text-align: center;
+	margin: auto;
+}
