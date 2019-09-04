@@ -1,12 +1,32 @@
-#header{
-	display:  flex;
-	width: 100%;
-	align-items: center;
-	background-color: #BF0000;
+body{
+	max-width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
 }
-#header h1{
-	margin: auto;
-	margin-left: calc(40% - 60px);
+#header{
+	width: 100%;
+	background-color: #BF0000;
+	position: relative;
+}
+.header-title{
+	height: 5vw;
+}
+#header > a{
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.header-title > h1{
+	text-align: center;
+	margin-top: auto;
+	margin-bottom: auto;
+	color: white;
+	line-height: 5vw;
+}
+img{
+	max-height: 5vw;
+	max-width: 5vw;
 }
 h1, h2, h3{
 	font-weight: bold;
