@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: 2019 年 9 月 04 日 04:43
+-- Generation Time: 2019 年 9 月 04 日 05:29
 -- サーバのバージョン： 10.1.35-MariaDB
 -- PHP Version: 7.2.9
 
@@ -30,8 +30,20 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `ingredients` (
   `id` int(11) NOT NULL,
-  `dish` char(30) NOT NULL,
-  `ingredient` char(30) NOT NULL
+  `dish` text NOT NULL,
+  `ingredient` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- テーブルの構造 `ingredient_to_link`
+--
+
+CREATE TABLE `ingredient_to_link` (
+  `id` int(11) NOT NULL,
+  `ingredient` text NOT NULL,
+  `link` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -45,6 +57,12 @@ ALTER TABLE `ingredients`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `ingredient_to_link`
+--
+ALTER TABLE `ingredient_to_link`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -52,6 +70,12 @@ ALTER TABLE `ingredients`
 -- AUTO_INCREMENT for table `ingredients`
 --
 ALTER TABLE `ingredients`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `ingredient_to_link`
+--
+ALTER TABLE `ingredient_to_link`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
