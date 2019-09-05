@@ -1,5 +1,33 @@
 <?php
 
+function scraping_ingredients($url){
+    /*楽天レシピのurlをもらったら食材を返す*/
+
+    require_once("./phpQuery-onefile.php");
+    $opts = array('http' => array('header' => "User-Agent:MyAgent/1.0\r\n"));
+    $context = stream_context_create($opts);
+    $html = file_get_contents($url, FALSE, $context);
+    $doc = phpQuery::newDocument($html);
+    
+    // 取得した食材を正規表現によりリスト化
+    $tmp_ingredients = preg_split("/\n|。|、|( |　)+/", $doc[".materialBox"][".name"]->text());
+    // 整形
+    $ingredients = array();
+    foreach($tmp_ingredients as $ing){
+        if ($ing != ""){
+            // TODO: 特殊な記号がある場合(☆等)削除
+            $ingredients[] = $ing;
+        }
+    }
+    echo var_dump($ingredients);
+
+    // TODO: 量の取得
+
+    return $ingredients;
+
+}
+
+// scraping_ingredients('https://recipe.rakuten.co.jp/recipe/1770021321/');
 
 function get_items($keyword){
     // ベースとなるリクエストURL
