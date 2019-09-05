@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: 2019 年 9 月 04 日 05:29
+-- Generation Time: 2019 年 9 月 05 日 03:45
 -- サーバのバージョン： 10.1.35-MariaDB
 -- PHP Version: 7.2.9
 
@@ -25,25 +25,36 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- テーブルの構造 `ingredients`
+-- テーブルの構造 `dishes`
 --
 
-CREATE TABLE `ingredients` (
-  `id` int(11) NOT NULL,
-  `dish` text NOT NULL,
-  `ingredient` text NOT NULL
+CREATE TABLE `dishes` (
+  `dish_id` int(11) NOT NULL,
+  `dish_name` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- テーブルの構造 `ingredient_to_link`
+-- テーブルの構造 `ingredients`
 --
 
-CREATE TABLE `ingredient_to_link` (
-  `id` int(11) NOT NULL,
-  `ingredient` text NOT NULL,
+CREATE TABLE `ingredients` (
+  `ingredient_id` int(11) NOT NULL,
+  `ingredient_name` text NOT NULL,
   `link` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- テーブルの構造 `ingredients_to_dishes`
+--
+
+CREATE TABLE `ingredients_to_dishes` (
+  `dish_id` int(11) NOT NULL,
+  `ingredient_is` int(11) NOT NULL,
+  `ingredients_to_dishes_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -51,16 +62,23 @@ CREATE TABLE `ingredient_to_link` (
 --
 
 --
+-- Indexes for table `dishes`
+--
+ALTER TABLE `dishes`
+  ADD PRIMARY KEY (`dish_id`);
+
+--
 -- Indexes for table `ingredients`
 --
 ALTER TABLE `ingredients`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`ingredient_id`);
 
 --
--- Indexes for table `ingredient_to_link`
+-- Indexes for table `ingredients_to_dishes`
 --
-ALTER TABLE `ingredient_to_link`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `ingredients_to_dishes`
+  ADD PRIMARY KEY (`dish_id`,`ingredient_is`),
+  ADD KEY `ingredients_to_dishes_id` (`ingredients_to_dishes_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -70,13 +88,13 @@ ALTER TABLE `ingredient_to_link`
 -- AUTO_INCREMENT for table `ingredients`
 --
 ALTER TABLE `ingredients`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ingredient_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `ingredient_to_link`
+-- AUTO_INCREMENT for table `ingredients_to_dishes`
 --
-ALTER TABLE `ingredient_to_link`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `ingredients_to_dishes`
+  MODIFY `ingredients_to_dishes_id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
