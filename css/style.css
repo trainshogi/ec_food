@@ -1,6 +1,32 @@
+body{
+	max-width: 800px;
+}
+#header{
+	width: 100%;
+	background-color: #BF0000;
+	position: relative;
+}
+.header-title{
+	height: 5vw;
+}
+#header > a{
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.header-title > h1{
+	text-align: center;
+	margin-top: auto;
+	margin-bottom: auto;
+	color: white;
+	line-height: 5vw;
+}
+img{
+	max-height: 5vw;
+	max-width: 5vw;
+}
 h1, h2, h3{
 	font-weight: bold;
-	text-align: center;
 }
 li, p{
 	text-align: center;

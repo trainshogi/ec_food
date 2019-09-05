@@ -10,3 +10,6 @@
 	text-align: center;
 	margin: auto;
 }
+.list-group-item-action{
+	color: blue;
+}

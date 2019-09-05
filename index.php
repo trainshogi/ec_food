@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>【楽天市場】レシピで検索</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/indexstyle.css">
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/indexstyle.css">
 </head>
-<body>
+<body style="margin-left: auto; margin-right: auto;">
 	<div id="header">
-		<img src="/img/logo.svg" alt="Rakuten, Inc.">
-    	<h1>レシピで検索</h1>
+		<a href="index.html"><img src="img/logo.png" alt="Rakuten, Inc."></a>
+		<div class="header-title"><h1>レシピで検索</h1></div>
 	</div>
     <p class="keyword_input_text">検索したいキーワードを入力してください</p>
     <div class="keyword_input">
@@ -20,6 +20,7 @@
 	</div>
 	<div style="text-align: center;">
 		<div class="list-group recipi_list">
+			<a href="#" class="list-group-item list-group-item-action active">料理のリスト</a>
 			<a href="#" class="list-group-item list-group-item-action">肉じゃが</a>
 			<a href="#" class="list-group-item list-group-item-action">カレー</a>
 			<a href="#" class="list-group-item list-group-item-action">シチュー</a>
