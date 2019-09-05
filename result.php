@@ -7,6 +7,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/indexstyle.css">
+    <?php include(‘ファイルのパス’); ?>
 </head>
 <body style="margin-left: auto; margin-right: auto;">
     <div id="header">
@@ -14,7 +15,7 @@
         <div class="header-title"><h1>レシピで検索</h1></div>
     </div>
     
-    <h2>肉じゃが</h2>
+    <h2>肉じゃが<?php echo h($result['cook_name']);?></h2>
 
     <h3>必要食材一覧</h3>
 	<ul>
@@ -22,5 +23,19 @@
     	<li>じゃがいも</li>
     	<li>人参</li>
     </ul>
+
+    <?php foreach ($results['ingredient'] as $result): ?>
+        <p><?php echo h($result['name']); ?></p>
+        <p><?php echo h($result['pic_link']); ?></p>
+        <p><?php echo h($result['link']); ?></p>
+    <?php endforeach; ?>
+
+    <table id="result">
+    </table>
+    <script>
+        var results =JSON.parse('<?php echo $php_results; ?>');
+
+    </script>
+
 </body>
 </html>
