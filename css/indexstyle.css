@@ -13,3 +13,20 @@
 .list-group-item-action{
 	color: blue;
 }
+.table{
+	width:50%;
+	text-align: center;
+}
+.thead{
+	line-height: 20px;
+}
+.tbody{
+	line-height: 50px;
+}
+.cookphoto{
+	width:50px;
+	height:50px;
+}
+.body{
+	background-color: #ffffff;
+}
