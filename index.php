@@ -14,8 +14,9 @@
 		<div class="header-title">レシピで検索</div>
 	</div>
 	<div class="title">
-		<img class="title-img "src="img/title_img.png" alt="image-photo">
+		<img class="title-img "src="img/title_img.png" alt="image-photo" aline="top">
 	</div>
+	<div class="second-title"><img src="img/cook.png" alt="cook" class="second-title-logo">料理のリスト</div>
     <p class="keyword_input_text">検索したいキーワードを入力してください</p>
     <div class="keyword_input">
     	<input type="search" name="search" placeholder="キーワードを入力してください">
@@ -23,23 +24,31 @@
 	</div>
 		<table class="table" style="table-layout:fixed;" align="center">
 	    <thead class="thead">
-	        <tr bgcolor=#f5deb3>
-	            <th style="width: 5vw;"><img src="img/cook.png" alt="cook" class="cookphoto"></th>
-	            <th style="width:40vw;">料理のリスト</th>
-	        </tr>
 	    </thead>
 	    <tbody bgcolor=#fffacd>
 	        <tr>
+	            <td><a href="#"><img src="img/meatpotato.jpg" alt="meatpotato" class="cookphoto"></td>
+	            <td><a href="#">肉じゃが</td>
+	            <td><a href="#"><img src="img/meatpotato.jpg" alt="meatpotato" class="cookphoto"></td>
+	            <td><a href="#">肉じゃが</td>
 	            <td><a href="#"><img src="img/meatpotato.jpg" alt="meatpotato" class="cookphoto"></td>
 	            <td><a href="#">肉じゃが</td>
 	        </tr>
 	        <tr>
 	            <td><a href="#"><img src="img/curry.jpg" alt="curry" class="cookphoto"></td>
 	            <td><a href="#">カレー</td>
+	            <td><a href="#"><img src="img/meatpotato.jpg" alt="meatpotato" class="cookphoto"></td>
+	            <td><a href="#">肉じゃが</td>
+	            <td><a href="#"><img src="img/meatpotato.jpg" alt="meatpotato" class="cookphoto"></td>
+	            <td><a href="#">肉じゃが</td>
 	        </tr>
 	        <tr>
 	            <td><a href="#"><img src="img/stew.jpg" alt="stew" class="cookphoto"></td>
 	            <td><a href="#">シチュー</td>
+	            <td><a href="#"><img src="img/meatpotato.jpg" alt="meatpotato" class="cookphoto"></td>
+	            <td><a href="#">肉じゃが</td>
+	            <td><a href="#"><img src="img/meatpotato.jpg" alt="meatpotato" class="cookphoto"></td>
+	            <td><a href="#">肉じゃが</td>
 	        </tr>
 	    </tbody>
 </table>
