@@ -16,12 +16,11 @@
 .table{
 	width:50%;
 	text-align: center;
-}
-.thead{
-	line-height: 20px;
-}
-.tbody{
 	line-height: 50px;
+}
+
+.table tr:nth-child(1){
+	height: 10px;
 }
 .cookphoto{
 	width:50px;
