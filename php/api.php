@@ -51,3 +51,6 @@ function get_ingredients($cook_name){
 
     return $json;
 }
+
+echo get_ingredients($_POST['cook_name']);
+exit();
