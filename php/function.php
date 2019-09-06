@@ -10,24 +10,27 @@ function scraping_ingredients($url){
     $doc = phpQuery::newDocument($html);
     
     // 取得した食材を正規表現によりリスト化
-    $tmp_ingredients = preg_split("/\n|。|、|( |　)+/", $doc[".materialBox"][".name"]->text());
+    $tmp_ingredients = preg_split("/\n|。|、|・|( |　)+/", $doc[".materialBox"][".name"]->text());
+    
     // 整形
+    // TODO: 量の取得
     $ingredients = array();
     foreach($tmp_ingredients as $ing){
+        // 日本語のみの抽出
+        mb_regex_encoding("UTF-8");
+        $ing = preg_replace("/[^ぁ-んァ-ンー一-龠\r]+/u",'' ,$ing);
+        
         if ($ing != ""){
-            // TODO: 特殊な記号がある場合(☆等)削除
-            $ingredients[] = $ing;
+            $ingredients[] = mb_convert_encoding($ing, "UTF-8");
         }
     }
-    echo var_dump($ingredients);
-
-    // TODO: 量の取得
+    echo var_dump($tmp_amount);
 
     return $ingredients;
 
 }
 
-// scraping_ingredients('https://recipe.rakuten.co.jp/recipe/1770021321/');
+// scraping_ingredients('https://recipe.rakuten.co.jp/recipe/1460015382/');
 
 function get_items($keyword){
     // ベースとなるリクエストURL
