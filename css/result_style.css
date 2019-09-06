@@ -1,0 +1,13 @@
+.ing_img{
+	width: 10%;
+	height: 10%;
+}
+img.float_img{
+	float:left;
+}
+p.float_kaijo{
+	clear:both;
+}
+.mgl-10{
+	margin-left: 10px;
+}
