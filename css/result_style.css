@@ -1,8 +1,13 @@
+.ingredient{
+	width: 90%;
+	margin: auto;
+}
 .ing_img{
 	width: 10%;
 	height: 10%;
 }
 img.float_img{
+	margin-left: 5vw;
 	float:left;
 }
 p.float_kaijo{
@@ -12,5 +17,19 @@ p.float_kaijo{
 	margin-left: 10px;
 }
 .ing_title{
-	line-height: 50px;
+	display: inline-block;
+	line-height: 40px;
+	width: 60%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis; 
+}
+.more_select_btn{
+	margin-left: 33%;
+}
+.ingredients{
+	text-overflow: ellipsis; 
+}
+.float_right{
+	float:right;
 }
