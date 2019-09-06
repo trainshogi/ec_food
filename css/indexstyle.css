@@ -10,6 +10,10 @@
 	text-align: center;
 	margin: auto;
 }
+.title-img{
+	width:70vw;
+	height:50vw;
+}
 .list-group-item-action{
 	color: blue;
 }
