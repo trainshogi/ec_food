@@ -11,7 +11,7 @@
 <body style="margin-left: auto; margin-right: auto;" class="body";>
 	<div id="header" class="header">
 		<a href="index.html"><img class="head-img" src="img/logo.png" alt="Rakuten, Inc."></a>
-		<div class="header-title"><h1>レシピで検索</h1></div>
+		<div class="header-title">レシピで検索</div>
 	</div>
 	<div class="title">
 		<img class="title-img "src="img/title_img.png" alt="image-photo">
@@ -24,8 +24,8 @@
 		<table class="table" style="table-layout:fixed;" align="center">
 	    <thead class="thead">
 	        <tr bgcolor=#f5deb3>
-	            <th style="width: 60px;"><img src="img/cook.png" alt="cook" class="cookphoto"></th>
-	            <th style="width:100px;">料理のリスト</th>
+	            <th style="width: 5vw;"><img src="img/cook.png" alt="cook" class="cookphoto"></th>
+	            <th style="width:40vw;">料理のリスト</th>
 	        </tr>
 	    </thead>
 	    <tbody bgcolor=#fffacd>
