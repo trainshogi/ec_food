@@ -8,6 +8,9 @@ function scraping_ingredients($url){
     $context = stream_context_create($opts);
     $html = file_get_contents($url, FALSE, $context);
     $doc = phpQuery::newDocument($html);
+
+    // レシピ名の取得
+    $title = preg_split("/レシピ・作り方/", $doc["title"]->text())[0];
     
     // 取得した食材を正規表現によりリスト化
     $tmp_ingredients = preg_split("/\n|。|、|・|( |　)+/", $doc[".materialBox"][".name"]->text());
@@ -24,9 +27,8 @@ function scraping_ingredients($url){
             $ingredients[] = mb_convert_encoding($ing, "UTF-8");
         }
     }
-    echo var_dump($tmp_amount);
 
-    return $ingredients;
+    return array($ingredients, $title);
 
 }
 

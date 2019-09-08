@@ -1,12 +1,27 @@
 <?php
 
 
-function get_ingredients($cook_name){
+function get_ingredients($query){
     require_once("./function.php");
-    $ingredients = extract_ingredients($cook_name);
-    // $ingredients = array('りんご', '肉', '魚');
+
+    // もしURLならAPIを直接叩いて食材を取得
+    $urls = array('https://recipe.rakuten.co.jp/recipe',);
+    
+    foreach ($urls as $u){
+        if (strpos($query,$u) !== false){
+            $tmp = scraping_ingredients($query);
+            $ingredients = $tmp[0];
+            $cook_name = $tmp[1];
+        }
+    }
+    if ($ingredients == null){
+        // $ingredients = extract_ingredients($query);
+        $ingredients = array('りんご', '肉', '魚');
+        $cook_name = $query;
+    }
     $info = array();
     foreach ($ingredients as $ing){
+        echo $ing.'をAPIから検索'."\n";
         $info[$ing] = get_items($ing);
     }
 
