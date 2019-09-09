@@ -2,7 +2,7 @@
 
 //DBに接続
 $host = "localhost"; //MySQLがインストールされてるコンピュータ
-$dbname = "search_ingredients"; //使用するDB
+$dbname = "food_db"; //使用するDB
 $charset = "utf8mb4"; //文字コード
 $user = 'root'; //MySQLにログインするユーザー名
 $password='';//ユーザーのパスワード
