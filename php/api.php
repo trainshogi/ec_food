@@ -7,6 +7,10 @@ function get_ingredients($query){
     // もしURLならAPIを直接叩いて食材を取得
     $urls = array('https://recipe.rakuten.co.jp/recipe',);
     
+    // 初期化
+    $ingredients = null;
+    $cook_name = null;
+
     foreach ($urls as $u){
         if (strpos($query,$u) !== false){
             $tmp = scraping_ingredients($query);
@@ -16,9 +20,11 @@ function get_ingredients($query){
     }
     if ($ingredients == null){
         $ingredients = extract_ingredients($query);
-        // $ingredients = array('りんご', '肉', '魚');
         $cook_name = $query;
     }
+
+    echo '料理名:'.$cook_name."\n";
+
     $info = array();
     foreach ($ingredients as $ing){
         echo $ing.'をAPIから検索'."\n";
@@ -37,6 +43,6 @@ function get_ingredients($query){
     return $json;
 }
 
-#echo get_ingredients($_POST['cook_name']);
-echo get_ingredients('カレー');
+echo get_ingredients($_POST['cook_name']);
+// echo get_ingredients('https://recipe.rakuten.co.jp/recipe/1460015382/');
 exit();

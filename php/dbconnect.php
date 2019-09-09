@@ -14,6 +14,7 @@ $options = [
 
 //DBへの接続設定
 $dsn = "mysql:host=$host;dbname=$dbname;charset=$charset";
+// $dsn = "mysql:host=$host;dbname=$dbname;charset=$charset;unix_socket=/Applications/XAMPP/xamppfiles/var/mysql/mysql.sock";  // phpからdb接続テスト用
 try {
     //DBへ接続
     $dbh = new PDO($dsn, $user, $password, $options);
