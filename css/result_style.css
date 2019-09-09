@@ -44,3 +44,16 @@ p.float_kaijo{
 	text-align: right;
 	padding-right: 5vw;
 }
+.ing_btn{
+	margin-left: 0.5vw;
+}
+.alert{
+	margin-bottom: 0;
+}
+.cook_name{
+	margin-bottom: 0;
+}
+.cook_name_div{	
+	width: 90vw;
+	margin: 1vw auto;
+}
