@@ -15,8 +15,10 @@
 	</div>
     <p class="keyword_input_text">検索したいキーワードを入力してください</p>
     <div class="keyword_input">
-    	<input type="search" name="search" placeholder="キーワードを入力してください">
-    	<input type="submit" name="submit" value="検索">
+		<form method="POST" action="php/api.php">
+			<input type="search" name="search" placeholder="キーワードを入力してください">
+			<input type="submit" name="submit" value="検索">
+		</form>
 	</div>
 	<table class="table" style="table-layout:fixed;" align="center">
 	    <thead>

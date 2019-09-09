@@ -1,8 +1,8 @@
 <?php
 
-// DBに接続
+//DBに接続
 $host = "localhost"; //MySQLがインストールされてるコンピュータ
-$dbname = ""; //使用するDB
+$dbname = "search_ingredients"; //使用するDB
 $charset = "utf8mb4"; //文字コード
 $user = 'root'; //MySQLにログインするユーザー名
 $password='';//ユーザーのパスワード

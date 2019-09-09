@@ -15,8 +15,8 @@ function get_ingredients($query){
         }
     }
     if ($ingredients == null){
-        // $ingredients = extract_ingredients($query);
-        $ingredients = array('りんご', '肉', '魚');
+        $ingredients = extract_ingredients($query);
+        // $ingredients = array('りんご', '肉', '魚');
         $cook_name = $query;
     }
     $info = array();
@@ -37,5 +37,6 @@ function get_ingredients($query){
     return $json;
 }
 
-echo get_ingredients($_POST['cook_name']);
+#echo get_ingredients($_POST['cook_name']);
+echo get_ingredients('カレー');
 exit();
