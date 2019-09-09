@@ -1,35 +1,46 @@
 .ingredient{
-	width: 90%;
+	width: 90vw;
 	margin: auto;
 }
 .ing_img{
-	width: 10%;
-	height: 10%;
-}
-img.float_img{
+	width: 10vw;
+	height: 10vw;
 	margin-left: 5vw;
-	float:left;
 }
 p.float_kaijo{
 	clear:both;
+}
+.inb{
+	display: inline-block;
 }
 .mgl-10{
 	margin-left: 10px;
 }
 .ing_title{
-	display: inline-block;
-	line-height: 40px;
-	width: 60%;
+	display: block;
+	width: 98%;
 	overflow: hidden;
 	white-space: nowrap;
-	text-overflow: ellipsis; 
+	text-overflow: ellipsis;
 }
 .more_select_btn{
+	margin: 10px auto;
 	margin-left: 33%;
 }
 .ingredients{
 	text-overflow: ellipsis; 
 }
-.float_right{
-	float:right;
+.ingredient_select{
+	display: inline-block;
+	margin: 10px auto;
+}
+.ing_txt{
+	width: 50vw;
+	vertical-align: middle;
+}
+.ing_btns{
+	width: calc(25vw - 10px);
+	display: inline-block;
+	text-align: right;
+	padding-right: 5vw;
 }
