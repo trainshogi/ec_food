@@ -1,16 +1,59 @@
-.ing_img{
-	width: 10%;
-	height: 10%;
+.ingredient{
+	width: 90vw;
+	margin: auto;
 }
-img.float_img{
-	float:left;
+.ing_img{
+	width: 10vw;
+	height: 10vw;
+	margin-left: 5vw;
 }
 p.float_kaijo{
 	clear:both;
+}
+.inb{
+	display: inline-block;
 }
 .mgl-10{
 	margin-left: 10px;
 }
 .ing_title{
-	line-height: 50px;
+	display: block;
+	width: 98%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.more_select_btn{
+	margin: 10px auto;
+	margin-left: 33%;
+}
+.ingredients{
+	text-overflow: ellipsis; 
+}
+.ingredient_select{
+	display: inline-block;
+	margin: 10px auto;
+}
+.ing_txt{
+	width: 50vw;
+	vertical-align: middle;
+}
+.ing_btns{
+	width: calc(25vw - 10px);
+	display: inline-block;
+	text-align: right;
+	padding-right: 5vw;
+}
+.ing_btn{
+	margin-left: 0.5vw;
+}
+.alert{
+	margin-bottom: 0;
+}
+.cook_name{
+	margin-bottom: 0;
+}
+.cook_name_div{	
+	width: 90vw;
+	margin: 1vw auto;
 }

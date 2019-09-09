@@ -16,56 +16,11 @@
         <div class="header-title"><h1>レシピで検索</h1></div>
     </div>
     
-    <h2 id="cook_name"></h2>
+    <div class="alert alert-danger cook_name_div" role="alert"><h2 id="cook_name" class="cook_name"></h2></div>
 
-    <h3>必要食材一覧</h3>
-	<ul>
-    	<li>豚こま</li>
-    	<li>じゃがいも</li>
-    	<li>人参</li>
-    </ul>
+    <div class="alert alert-warning cook_name_div" role="alert"><h3 class="cook_name">必要食材一覧</h3></div>
 
-    <table id="ingredients">
-        <tr><td>名前</td><td>URL</td><td>画像URL</td></tr>
-    </table>
-
-    <div class="ingredient">
-        <div class="ingredient_name alert alert-warning" role="alert">
-            <!-- 食材名 -->
-            豚肉
-        </div>
-        <div class="ingredient_selects">
-            <div class="ingredient_select">
-                <!-- 写真 -->
-                <img class="ing_img float_img" src="https://thumbnail.image.rakuten.co.jp/@0_mall/kizunasann/cabinet/ringo/ringo-w5k.jpg"  align="top">
-                <!-- 商品名 -->
-                <span class="mgl-10 ing_title">スーパーセール10%OFF 朝どれ 秋映 訳あり 葉とらず 味極み りんご 減農薬 長野県産 5キロ</span>
-                <!-- リンク -->
-                <span class="mgl-10"><a href="https://item.rakuten.co.jp/kizunasann/ringo_bara_wake_5k/">https://item.rakuten.co.jp/kizunasann/ringo_bara_wake_5k/</a></span>
-                <p class="float_kaijo">
-            </div>
-            <div>
-                <!-- more select 的ボタン -->
-            </div>
-            <div class="ingredient_select">
-                <!-- 写真 -->
-                <img class="ing_img float_img" src="https://thumbnail.image.rakuten.co.jp/@0_mall/kizunasann/cabinet/ringo/ringo-w5k.jpg"  align="top">
-                <!-- 商品名 -->
-                <span class="mgl-10 ing_title">スーパーセール10%OFF 朝どれ 秋映 訳あり 葉とらず 味極み りんご 減農薬 長野県産 5キロ</span>
-                <!-- リンク -->
-                <span class="mgl-10"><a href="https://item.rakuten.co.jp/kizunasann/ringo_bara_wake_5k/">https://item.rakuten.co.jp/kizunasann/ringo_bara_wake_5k/</a></span>
-                <p class="float_kaijo">
-            </div>
-            <div class="ingredient_select">
-                <!-- 写真 -->
-                <img class="ing_img float_img" src="https://thumbnail.image.rakuten.co.jp/@0_mall/kizunasann/cabinet/ringo/ringo-w5k.jpg"  align="top">
-                <!-- 商品名 -->
-                <span class="mgl-10 ing_title">スーパーセール10%OFF 朝どれ 秋映 訳あり 葉とらず 味極み りんご 減農薬 長野県産 5キロ</span>
-                <!-- リンク -->
-                <span class="mgl-10"><a href="https://item.rakuten.co.jp/kizunasann/ringo_bara_wake_5k/">https://item.rakuten.co.jp/kizunasann/ringo_bara_wake_5k/</a></span>
-                <p class="float_kaijo">
-            </div>
-        </div>
+    <div class="ingredient" id="ingredients"></div>
 
 </body>
 </html>
