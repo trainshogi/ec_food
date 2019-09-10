@@ -24,7 +24,7 @@
 		<table class="table" style="table-layout:fixed;" align="center">
 	    <thead class="thead">
 	    </thead>
-	    <tbody bgcolor=#fffacd>
+	    <tbody bgcolor=#ffffff>
 	        <tr>
 	            <td><a href="result.html?name=%E8%82%89%E3%81%98%E3%82%83%E3%81%8C"><img src="img/meatpotato.jpg" alt="meatpotato" class="cookphoto"></td>
 	            <td><a href="#">肉じゃが</td>
@@ -50,7 +50,10 @@
 	            <td><a href="#">肉じゃが</td>
 	        </tr>
 	    </tbody>
-</table>
+	</table>
+	<div class="footer">
+        <p>Copyright (c) Rakuten inc</p>
+    </div>
 
 
 
