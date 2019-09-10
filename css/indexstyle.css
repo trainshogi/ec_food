@@ -40,7 +40,7 @@
 	height:5vw;
 }
 .body{
-	background-color: #ffffff;
+	background-color: #fffacd;
 }
 .second-title{
 	background-color: #f5deb3;
@@ -85,4 +85,13 @@ font-size:16px;/*検索ボタンのフォントサイズ*/
 /*検索ボタンマウスオーバー時*/
 #sbtn:hover{
 color:#cd5c5c;/*検索ボタンマウスオーバー時のフォントカラー*/ 
+}
+.footer {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  background-color: #2e8b57;
+  color: #fff;
+  font-size: 18px;
+  padding: 20px 0;
 }
