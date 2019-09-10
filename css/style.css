@@ -33,12 +33,4 @@ h1, h2, h3{
 li, p{
 	text-align: center;
 }
-.second-title{
-	text-align: center;
-	margin-top: auto;
-	margin-bottom: auto;
-	color: white;
-	line-height: 5vw;
-	font-weight: bold;
-	font-size:4vw;
-}
+
