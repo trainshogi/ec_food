@@ -25,8 +25,8 @@ function add2ings(tmpstr){
 
 function add_item(item){
         var tmpitem = item_start;
-        tmpitem += item_img_start + item['img'] + item_img_end;
-        tmpitem += item_txt_start + item['name'] + item_txt_mid1 + item['url'] + item_txt_mid2 + item['url'] + item_txt_end;
+        tmpitem += item_img_start + item['mediumImageUrls'] + item_img_end;
+        tmpitem += item_txt_start + item['itemName'] + item_txt_mid1 + item['itemUrl'] + item_txt_mid2 + item['itemUrl'] + item_txt_end;
         tmpitem += item_btn_start + item_btn_end;
         tmpitem += item_end;
         add2ings(tmpitem);
