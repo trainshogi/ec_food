@@ -9,25 +9,24 @@
     <link rel="stylesheet" type="text/css" href="css/indexstyle.css">
 </head>
 <body style="margin-left: auto; margin-right: auto;" class="body";>
-	<div id="header" class="header">
+	<!---<div id="header" class="header">
 		<a href="index.html"><img class="head-img" src="img/logo.png" alt="Rakuten, Inc."></a>
 		<div class="header-title">レシピで検索</div>
-	</div>
+	</div>--->
 	<div class="title">
-		<img class="title-img "src="img/title_img.png" alt="image-photo" aline="top">
+		<img class="title-img "src="img/main_img.png" alt="image-photo" aline="top">
+		<div class="keyword_input">
+    		<input id="sbox1" type="search" name="search" placeholder="料理名を入力してください">
+    		<input id="sbtn1" type="submit" name="submit" value="検索">
+		</div>
 	</div>
 	<div class="second-title"><img src="img/cook.png" alt="cook" class="second-title-logo">料理のリスト</div>
-    <p class="keyword_input_text">検索したいキーワードを入力してください</p>
-    <div class="keyword_input">
-    	<input type="search" name="search" placeholder="キーワードを入力してください">
-    	<input type="submit" name="submit" value="検索">
-	</div>
 		<table class="table" style="table-layout:fixed;" align="center">
 	    <thead class="thead">
 	    </thead>
 	    <tbody bgcolor=#fffacd>
 	        <tr>
-	            <td><a href="#"><img src="img/meatpotato.jpg" alt="meatpotato" class="cookphoto"></td>
+	            <td><a href="result.html?name=%E8%82%89%E3%81%98%E3%82%83%E3%81%8C"><img src="img/meatpotato.jpg" alt="meatpotato" class="cookphoto"></td>
 	            <td><a href="#">肉じゃが</td>
 	            <td><a href="#"><img src="img/meatpotato.jpg" alt="meatpotato" class="cookphoto"></td>
 	            <td><a href="#">肉じゃが</td>
