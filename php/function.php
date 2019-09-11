@@ -42,14 +42,6 @@ function scraping_ingredients($url){
 
 // scraping_ingredients('https://recipe.rakuten.co.jp/recipe/1460015382/');
 
-function scraping_shopid($url){
-    $html = get_doc($url);
-    // echo var_dump($html);
-}
-
-scraping_shopid("https://item.rakuten.co.jp/kagomoto/wa-kiriotoshi1050g/");
-
-
 function get_items($keyword){
     // ベースとなるリクエストURL
     $baseurl = 'https://app.rakuten.co.jp/services/api/IchibaItem/Search/20170706';
