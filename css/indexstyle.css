@@ -30,11 +30,40 @@
 	width:90vw;
 	text-align: center;
 	line-height: 5vw;
+	 border-collapse: collapse;
+  margin: 0 auto;
+  padding: 0;
+  table-layout: fixed;
+  font-weight: bold;
 }
 
-.table tr:nth-child(1){
-	height: 10px;
+table tr {
+  background-color: #e6f2f5;
+  border-bottom: 2px solid #fff;
 }
+table th,
+table td {
+  padding: 1em 10px 1em 1em;
+  border-right: 2px solid #fff;
+}
+table th {
+  font-size: .85em;
+}
+table thead tr{
+  background-color: #167F92;
+  color:#fff;
+}
+table tbody th {
+    background: #78bbc7;
+    color: #fff;
+}
+.cname{
+  color: #167F92;
+}
+.non{
+  background:#fff
+}
+
 .cookphoto{
 	width:5vw;
 	height:5vw;
