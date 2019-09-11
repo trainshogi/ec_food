@@ -100,7 +100,7 @@ function extract_ingredients($dish_name) {
 
     $result = $stmt->fetchAll();
     $result_array = array_map('reset', $result);
-    print_r($result_array);
+    // print_r($result_array);
     return $result_array;
 }
 
