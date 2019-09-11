@@ -26,8 +26,8 @@
 	    </thead>
 	    <tbody bgcolor=#ffffff>
 	        <tr>
-	            <td><a href="result.html?name=%E8%82%89%E3%81%98%E3%82%83%E3%81%8C"><img src="img/meatpotato.jpg" alt="meatpotato" class="cookphoto"></td>
-	            <td><a href="#">肉じゃが</td>
+	            <td class="pic"><a href="result.html?name=%E8%82%89%E3%81%98%E3%82%83%E3%81%8C"><img src="img/meatpotato.jpg" alt="meatpotato" class="cookphoto"></td>
+	            <td class="cname"><a href="#">肉じゃが</td>
 	            <td><a href="#"><img src="img/meatpotato.jpg" alt="meatpotato" class="cookphoto"></td>
 	            <td><a href="#">肉じゃが</td>
 	            <td><a href="#"><img src="img/meatpotato.jpg" alt="meatpotato" class="cookphoto"></td>
