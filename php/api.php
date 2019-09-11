@@ -23,11 +23,11 @@ function get_ingredients($query){
         $cook_name = $query;
     }
 
-    echo '料理名:'.$cook_name."\n";
+    // echo '料理名:'.$cook_name."\n";
 
     $info = array();
     foreach ($ingredients as $ing){
-        echo $ing.'をAPIから検索'."\n";
+        // echo $ing.'をAPIから検索'."\n";
         $info[$ing] = get_items($ing);
     }
 
@@ -43,6 +43,7 @@ function get_ingredients($query){
     return $json;
 }
 
-echo get_ingredients($_POST['cook_name']);
+// echo get_ingredients($_POST['cook_name']);
 // echo get_ingredients('https://recipe.rakuten.co.jp/recipe/1460015382/');
+echo get_ingredients('肉じゃが');
 exit();

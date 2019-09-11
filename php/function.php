@@ -64,10 +64,13 @@ function get_items($keyword){
         $items[] = array(
                         'itemName' => (string)$item->Item->itemName,
                         'itemUrl' => (string)$item->Item->itemUrl,
+                        'itemCode' => (string)$item->Item->itemCode,
                         'smallImageUrls' => isset($item->Item->smallImageUrls[0]->imageUrl) ? (string)$item->Item->smallImageUrls[0]->imageUrl : '',
                         'mediumImageUrls' => isset($item->Item->mediumImageUrls[0]->imageUrl) ? (string)$item->Item->mediumImageUrls[0]->imageUrl : '',
                         'itemPrice' => (string)$item->Item->itemPrice,
                         'shopName' => (string)$item->Item->shopName,
+                        'shopUrl' => (string)$item->Item->shopUrl,
+                        'shopCode' => (string)$item->Item->shopCode,
                         'reviewCount' => (float)$item->Item->reviewCount,
                         'reviewAverage' => (float)$item->Item->reviewAverage,
                         'pointRate' => (float)$item->Item->pointRate,
@@ -100,7 +103,7 @@ function extract_ingredients($dish_name) {
 
     $result = $stmt->fetchAll();
     $result_array = array_map('reset', $result);
-    print_r($result_array);
+    // print_r($result_array);
     return $result_array;
 }
 
