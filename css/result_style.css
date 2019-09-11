@@ -39,10 +39,10 @@ p.float_kaijo{
 	vertical-align: middle;
 }
 .ing_btns{
-	width: calc(25vw - 10px);
+	width: calc(25vw - 30px);
 	display: inline-block;
 	text-align: right;
-	padding-right: 5vw;
+	padding-right: calc(5vw - 30px);
 }
 .ing_btn{
 	margin-left: 0.5vw;
@@ -56,4 +56,8 @@ p.float_kaijo{
 .cook_name_div{	
 	width: 90vw;
 	margin: 1vw auto;
+}
+.hidden_ings{
+	overflow: auto;
+	height: 30vw;	
 }
