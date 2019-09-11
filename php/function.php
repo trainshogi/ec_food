@@ -1,13 +1,21 @@
 <?php
 
-function scraping_ingredients($url){
-    /*楽天レシピのurlをもらったら食材を返す*/
-
+function get_doc($url, $hasHTML=false){
     require_once("./phpQuery-onefile.php");
     $opts = array('http' => array('header' => "User-Agent:MyAgent/1.0\r\n"));
     $context = stream_context_create($opts);
     $html = file_get_contents($url, FALSE, $context);
+    if ($hasHTML === true){
+        echo 'html';
+        return $html;
+    }
     $doc = phpQuery::newDocument($html);
+    return $doc;
+}
+
+function scraping_ingredients($url){
+    /*楽天レシピのurlをもらったら食材を返す*/
+    $doc = get_doc($url);
 
     // レシピ名の取得
     $title = preg_split("/レシピ・作り方/", $doc["title"]->text())[0];
@@ -34,6 +42,14 @@ function scraping_ingredients($url){
 
 // scraping_ingredients('https://recipe.rakuten.co.jp/recipe/1460015382/');
 
+function scraping_shopid($url){
+    $html = get_doc($url);
+    // echo var_dump($html);
+}
+
+scraping_shopid("https://item.rakuten.co.jp/kagomoto/wa-kiriotoshi1050g/");
+
+
 function get_items($keyword){
     // ベースとなるリクエストURL
     $baseurl = 'https://app.rakuten.co.jp/services/api/IchibaItem/Search/20170706';
@@ -41,6 +57,7 @@ function get_items($keyword){
     $params = array();
     $params['applicationId'] = '1083631531973280170'; // アプリID
     $params['keyword'] = urlencode_rfc3986($keyword); // 任意のキーワード。※文字コードは UTF-8
+    $params['hits'] = 10;
     // $params['sort'] = urlencode_rfc3986('+itemPrice'); // ソートの方法。※文字コードは UTF-8
     // NOTE: 必要があればジャンルで絞る
     // $params['genreId'] = '100227';
@@ -112,6 +129,3 @@ function extract_ingredients($dish_name) {
 function urlencode_rfc3986($str) {
     return str_replace('%7E', '~', rawurlencode($str));
 }
-
-
-#extract_ingredients('カレー');
