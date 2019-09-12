@@ -20,8 +20,8 @@ var item_txt_mid1  = '</span><span class="mgl-10 ing_title"><a href="';
 var item_txt_mid2  = '">';
 var item_txt_end   = '</a></span></div>'
 var item_btn_start = '<div class="ing_btns"><button type="button" class="btn btn-info inb ing_btn">select</button>';
-var item_btn_mid   = '<button type="button" class="btn btn-success inb ing_btn" onclick="location.href=';
-var item_btn_end   = '">buy now</button></div>';
+var item_btn_mid   = '<button type="button" class="btn btn-success inb ing_btn" onclick="item2cart(';
+var item_btn_end   = ');">buy now</button></div>';
 
 // define string of more select button
 var more_btn_start = '<div class="more_select_btn"><button type="button" class="btn btn-primary btn-block ';
@@ -40,9 +40,10 @@ function add_more_button(num){
 
 function add_item(item){
         var tmpitem = item_start;
+        var purbtn  = "" + item['shopId']
         tmpitem += item_img_start + item['mediumImageUrls'] + item_img_end;
         tmpitem += item_txt_start + item['itemName'] + item_txt_mid1 + item['itemUrl'] + item_txt_mid2 + item['itemUrl'] + item_txt_end;
-        tmpitem += item_btn_start + item_btn_mid + item['itemUrl'] + item_btn_end;
+        tmpitem += item_btn_start + item_btn_mid + item['shopId'] + "," +item['itemCode'].split(':')[1] + item_btn_end;
         tmpitem += item_end;
         add2ings(tmpitem);
 }
@@ -51,7 +52,7 @@ function make_hidden_item(item, num){
         var tmpitem = item_h_start1 + String(num) + item_h_start2;
         tmpitem += item_img_start + item['mediumImageUrls'] + item_img_end;
         tmpitem += item_txt_start + item['itemName'] + item_txt_mid1 + item['itemUrl'] + item_txt_mid2 + item['itemUrl'] + item_txt_end;
-        tmpitem += item_btn_start + item_btn_mid + item['itemUrl'] + item_btn_end;
+        tmpitem += item_btn_start + item_btn_mid + item['shopId'] + "," +item['itemCode'].split(':')[1] + item_btn_end;
         tmpitem += item_h_end;
         return tmpitem;        
 }
@@ -65,6 +66,58 @@ function disp_ing(num){
         }else{
                 $(clsname).css('display', hid);
         }
+}
+
+function item2cart(shop_bid, item_id){
+        _item2cart(shop_bid, item_id).then(function(data){
+                if( data.resultCode == '0'){
+                        splash("カートに入れました");                                
+                }else{
+                        splash("カートに入れられませんでした");
+                }
+        });
+}
+
+function _item2cart(shop_bid, item_id){        
+        var params = {
+            'shopid': shop_bid,
+            'units': 1,
+            'itemid': item_id
+        };
+        return $.ajax({
+                url: 'http://direct.step.rakuten.co.jp/rms/mall/cartAdd/',
+                type: 'get',
+                dataType: 'jsonp',
+                data: params
+        });
+        //.then(function(data){
+                // 挿入できました的なフィードバックを表示する
+
+        //     current ++;
+        //     if( current >= productList.length ){
+               // location.href = 'https://ts.basket.step.rakuten.co.jp/rms/mall/bs/cartall/';
+        //     }
+        //     else {
+        //        setProduct( current );
+        //     }
+        //});
+}
+
+function item2carts(shop_bids, item_ids){
+        var result = _item2carts(shop_bids, item_ids);
+        if (result == true){
+                splash("全てカートに入れました");
+        }else{
+                splash("一部カートに入れられませんでした");
+        }        
+}
+
+function _item2carts(shop_bids, item_ids){
+        var result = [];
+        for (let i = 0; i < shop_bids.length; i++) {
+                result.push(_item2cart(shop_bids[i],item_ids[i]));
+        }
+        return result;
 }
 
 // counter
