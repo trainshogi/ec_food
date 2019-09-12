@@ -1,6 +1,11 @@
 # ec_food
-- XAMPPをインストールして、このファイルを`XAMPP/xamppfiles/htdocs`直下に置く
-- DBファイルの読み込み手順にしたがって、DBの作成
+- XAMPPをインストールして、このファイルを`XAMPP/xamppfiles/htdocs`直下に置く  
+- 下記の状態にする  
+<img width="782" alt="スクリーンショット 2019-09-12 18 01 29" src="https://user-images.githubusercontent.com/26706103/64774809-7c0c6880-d587-11e9-818e-0aace7363072.png">  
+
+- DBファイルの読み込み手順にしたがって、DBの作成  
+- http://localhost/ec_food/index.htmlにアクセスする  
+
 
 ## XAMPPのインストール
 - Mac

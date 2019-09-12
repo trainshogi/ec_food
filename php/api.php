@@ -27,9 +27,10 @@ function get_ingredients($query){
     $info = array();
     foreach ($ingredients as $ing){
         // echo $ing.'をAPIから検索'."\n";
-        $info[$ing] = get_items($ing);
+        if (!in_array($ing, array_keys($info))){
+            $info[$ing] = get_items($ing);
+        }
     }
-
     $result = array(
         "ingredients" => $ingredients,
         "cook_name" => $cook_name,
