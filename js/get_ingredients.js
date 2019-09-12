@@ -131,12 +131,16 @@ function _items2cart(shop_bids, item_ids){
         var ajaxs = [];
         for (let i = 0; i < shop_bids.length; i++) {
                ajaxs.push(_item2cart(shop_bids[i], item_ids[i]));
-               if (i % 5 == 0){
+               if (i % 4 == 0){
                  sleep(1000);
                }
         }
         return ajaxs;
 }
+
+// show guruguru
+var h = $(window).height();
+$('#loader-bg,#loader').height(h).css('display','inline-block');
 
 // counter
 var counter = 0;
@@ -172,5 +176,8 @@ $.ajax({
                         // count up
                         counter += 1;
         	}
+                // hide gif
+                $('#loader-bg').fadeOut(800);
+                $('#loader').delay(600).fadeOut(300);
         }
 });
