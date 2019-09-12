@@ -43,7 +43,7 @@ function get_ingredients($query){
     return $json;
 }
 
-// echo get_ingredients($_POST['cook_name']);
-echo get_ingredients('https://recipe.rakuten.co.jp/recipe/1460015382/');
+echo get_ingredients($_POST['cook_name']);
+// echo get_ingredients('https://recipe.rakuten.co.jp/recipe/1460015382/');
 // echo get_ingredients('肉じゃが');
 exit();
