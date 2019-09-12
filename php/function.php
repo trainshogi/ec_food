@@ -45,6 +45,9 @@ function get_shopid($shop_code){
     $result = $stmt->fetchAll();
     $result_array = array_map('reset', $result);
     // print_r($result_array);
+    if (empty($result_array)){
+        return array(0);
+    }
     return $result_array;
 }
 
