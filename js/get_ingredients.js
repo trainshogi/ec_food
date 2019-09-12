@@ -28,6 +28,19 @@ var more_btn_start = '<div class="more_select_btn"><button type="button" class="
 var more_btn_mid   = '" style="width: 50%" onclick="disp_ing(';
 var more_btn_end   = ')">more select</button></div>';
 
+// static ids
+var shop_bids = [];
+var item_ids  = [];
+
+function sleep(a){
+  var dt1 = new Date().getTime();
+  var dt2 = new Date().getTime();
+  while (dt2 < dt1 + a){
+    dt2 = new Date().getTime();
+  }
+  return;
+}
+
 function add2ings(tmpstr){
         $('#ingredients').append(tmpstr);
 }
@@ -45,6 +58,9 @@ function add_item(item){
         tmpitem += item_txt_start + item['itemName'] + item_txt_mid1 + item['itemUrl'] + item_txt_mid2 + item['itemUrl'] + item_txt_end;
         tmpitem += item_btn_start + item_btn_mid + item['shopId'] + "," +item['itemCode'].split(':')[1] + item_btn_end;
         tmpitem += item_end;
+        // add to static
+        shop_bids.push(item['shopId']);
+        item_ids.push(item['itemCode'].split(':')[1]);
         add2ings(tmpitem);
 }
 
@@ -103,21 +119,23 @@ function _item2cart(shop_bid, item_id){
         //});
 }
 
-function item2carts(shop_bids, item_ids){
-        var result = _item2carts(shop_bids, item_ids);
-        if (result == true){
+function items2cart(){
+        var results = [];
+        var ajaxs = _items2cart(shop_bids, item_ids);
+        $.when.apply($, ajaxs).always(function(data){
                 splash("全てカートに入れました");
-        }else{
-                splash("一部カートに入れられませんでした");
-        }        
+        });
 }
 
-function _item2carts(shop_bids, item_ids){
-        var result = [];
+function _items2cart(shop_bids, item_ids){
+        var ajaxs = [];
         for (let i = 0; i < shop_bids.length; i++) {
-                result.push(_item2cart(shop_bids[i],item_ids[i]));
+               ajaxs.push(_item2cart(shop_bids[i], item_ids[i]));
+               if (i % 5 == 0){
+                 sleep(1000);
+               }
         }
-        return result;
+        return ajaxs;
 }
 
 // counter
