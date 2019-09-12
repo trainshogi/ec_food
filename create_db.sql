@@ -156,8 +156,14 @@ COMMIT;
 
 CREATE TABLE `shops` (
   `shop_code` text NOT NULL,
-  `shop_id` int(11) NOT NULL
+  `shop_id` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+LOAD DATA LOCAL INFILE "../htdocs/ec_food/shopcode2id.csv"
+INTO TABLE `shops`
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n';
+
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
