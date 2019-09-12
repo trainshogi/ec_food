@@ -1,21 +1,5 @@
 <?php
 
-function get_shopids($shop_code){
-    require_once('dbconnect.php');
-    $stmt = $dbh->prepare('SELECT
-                          shop_id
-                          FROM
-                          shops
-                          WHERE
-                          shop_code = ?');
-    $stmt->execute([$shop_code]);//?を変数に置き換えてSQLを実行
-
-    $result = $stmt->fetchAll();
-    $result_array = array_map('reset', $result);
-    print_r($result_array);
-    return $result_array;
-}
-
 function get_ingredients($query){
     require_once("./function.php");
 
@@ -59,7 +43,4 @@ function get_ingredients($query){
 }
 
 // echo get_ingredients($_POST['cook_name']);
-// echo get_ingredients('https://recipe.rakuten.co.jp/recipe/1460015382/');
-//echo get_ingredients('肉じゃが');
-echo get_shopids("ショップ１");
 exit();

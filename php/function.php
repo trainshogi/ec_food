@@ -1,14 +1,10 @@
 <?php
 
-function get_doc($url, $hasHTML=false){
+function get_doc($url){
     require_once("./phpQuery-onefile.php");
     $opts = array('http' => array('header' => "User-Agent:MyAgent/1.0\r\n"));
     $context = stream_context_create($opts);
     $html = file_get_contents($url, FALSE, $context);
-    if ($hasHTML === true){
-        echo 'html';
-        return $html;
-    }
     $doc = phpQuery::newDocument($html);
     return $doc;
 }
@@ -40,7 +36,18 @@ function scraping_ingredients($url){
 
 }
 
-// scraping_ingredients('https://recipe.rakuten.co.jp/recipe/1460015382/');
+
+function get_shopid($shop_code){
+    require 'dbconnect.php';
+    $stmt = $dbh->prepare('SELECT shop_id FROM shops WHERE shop_code = ?');
+    $stmt->execute([$shop_code]);  // ?を変数に置き換えてSQLを実行
+
+    $result = $stmt->fetchAll();
+    $result_array = array_map('reset', $result);
+    // print_r($result_array);
+    return $result_array;
+}
+
 
 function get_items($keyword){
     // ベースとなるリクエストURL
@@ -70,6 +77,7 @@ function get_items($keyword){
 
     $items = array();
     foreach($rakuten_json->Items as $item) {
+
         $items[] = array(
                         'itemName' => (string)$item->Item->itemName,
                         'itemUrl' => (string)$item->Item->itemUrl,
@@ -80,6 +88,7 @@ function get_items($keyword){
                         'shopName' => (string)$item->Item->shopName,
                         'shopUrl' => (string)$item->Item->shopUrl,
                         'shopCode' => (string)$item->Item->shopCode,
+                        'shopId' =>  (integer)get_shopid((string)$item->Item->shopCode)[0],
                         'reviewCount' => (float)$item->Item->reviewCount,
                         'reviewAverage' => (float)$item->Item->reviewAverage,
                         'pointRate' => (float)$item->Item->pointRate,
