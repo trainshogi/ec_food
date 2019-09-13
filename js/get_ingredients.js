@@ -120,9 +120,17 @@ function _item2cart(shop_bid, item_id){
 }
 
 function items2cart(){
+        // show guruguru
+        $('html, body').animate({scrollTop:0}, 'slow');
+        var h = $(window).height();
+        $('#loader-bg,#loader').height(h).css('display','inline-block');
+
         var results = [];
         var ajaxs = _items2cart(shop_bids, item_ids);
         $.when.apply($, ajaxs).always(function(data){
+                // hide gif
+                $('#loader-bg').fadeOut(800);
+                $('#loader').delay(600).fadeOut(300);
                 splash("全てカートに入れました");
         });
 }
